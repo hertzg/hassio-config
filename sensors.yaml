@@ -1,0 +1,59 @@
+- platform: mqtt
+  name: "Home Electricity Watts"
+  state_topic: "rtl_433/+/devices/Efergy-e2CT/60410/current"
+  unit_of_measurement: "W"
+  value_template: "{{ value | round(2) * 230}}"
+  device_class: power
+  state_class: measurement
+
+- platform: integration
+  name: "Home Electricity kWh"
+  source: sensor.home_electricity_watts
+  round: 3
+  method: left
+  unit_prefix: k
+
+- platform: mqtt
+  name: "Home Electricity Amps"
+  state_topic: "rtl_433/+/devices/Efergy-e2CT/60410/current"
+  device_class: current
+  state_class: measurement
+  unit_of_measurement: "A"
+
+- !include sensors/fixer_io.yaml
+- !include sensors/dwd.yaml
+#
+# - platform: template
+#   sensors:
+#     efergy_mains_watts:
+#       friendly_name: "Efergy Mains Watts"
+#       unit_of_measurement: "W"
+#       value_template: >
+#         {% set PF = 0.8 | float %}
+#         {% set V = 220 | float %}
+#         {% set A = states('sensor.efergy_mains_amps') | float %}
+#         {{ PF * A * V }}
+# - platform: statistics
+#   name: efergy_mains_watt_minutes
+#   entity_id: sensor.efergy_mains_watts
+#   sampling_size: 10
+# - platform: template
+#   sensors:
+#     efergy_mains_kwatt_hours:
+#       friendly_name: Efergy Mains kWh
+#       unit_of_measurement: kWh
+#       value_template: "{{ (state_attr('sensor.efergy_mains_watt_minutes', 'total') | float ) / (1000 * 60) }}"
+#       device_class: energy
+
+# - platform: integration
+#   source: sensor.efergy_mains_watts
+#   name: Efergy Mains Power Spent
+#   unit_prefix: null
+#   method: right
+#   round: 2
+# - platform: derivative
+#   source: sensor.efergy_mains_watts
+#   name: Efergy Mains Power change per minute
+#   round: 2
+#   unit_time: min
+#   time_window: "00:01:00"

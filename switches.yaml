@@ -1,0 +1,18 @@
+- platform: flux
+  name: Adaptive Lighting
+  lights:
+    - light.work_light
+    - light.bathroom_light
+    - light.bedroom_light
+    - light.entrance_light
+    - light.kitchen_light
+    - light.living_room_light
+  start_time: "08:00"
+  stop_time: "20:00"
+  start_colortemp: 5900
+  sunset_colortemp: 3600
+  stop_colortemp: 2500
+  disable_brightness_adjust: false
+  mode: mired
+  transition: 30
+  interval: 5

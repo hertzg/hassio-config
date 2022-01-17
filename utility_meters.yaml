@@ -1,0 +1,24 @@
+hourly_energy:
+  name: Hourly Electricity
+  source: sensor.home_electricity_kwh
+  cycle: hourly
+daily_energy:
+  name: Daily Electricity
+  source: sensor.home_electricity_kwh
+  cycle: daily
+weekly_energy:
+  name: Weekly Electricity
+  source: sensor.home_electricity_kwh
+  cycle: weekly
+monthly_energy:
+  name: Monthly Electricity
+  source: sensor.home_electricity_kwh
+  cycle: monthly
+quarterly_energy:
+  name: Quarterly Electricity
+  source: sensor.home_electricity_kwh
+  cycle: quarterly
+yearly_energy:
+  name: Yearly Electricity
+  source: sensor.home_electricity_kwh
+  cycle: yearly

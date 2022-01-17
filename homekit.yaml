@@ -1,0 +1,47 @@
+- name: Hassio Samsung
+  mode: accessory
+  port: 51825
+  filter:
+    include_entities:
+      - media_player.hertz_tv
+
+# - name: Hassio TP-Link
+#   mode: accessory
+#   port: 51826
+#   filter:
+#     include_entities:
+#       - camera.home_camera_hd
+#   entity_config:
+#     camera.home_camera_hd:
+#       video_codec: copy
+#       support_audio: true
+#       linked_doorbell_sensor: binary_sensor.entrance_door
+
+- name: Hassio Generic
+  port: 51827
+  filter:
+    include_entities:
+      - light.bathroom_light
+      - light.bed_led_strip
+      - light.bedroom_light
+      - light.entrance_light
+      - light.kitchen_light
+      - light.living_room_light
+      - light.work_light
+      - sensor.bathroom_humidity
+      - sensor.bathroom_temperature
+      - sensor.kitchen_humidity
+      - sensor.kitchen_temperature
+      - sensor.outdoor_humidity_2
+      - sensor.outdoor_temperature_2
+      - binary_sensor.bathroom_motion
+      - binary_sensor.bathroom_door
+      - binary_sensor.entrance_door
+      - binary_sensor.kitchen_door
+      - binary_sensor.patio_door
+      - binary_sensor.home_camera_motion
+      - fan.levoit_131s_air_purifier
+      - binary_sensor.bedroom_window
+      - binary_sensor.kitchen_window
+      - binary_sensor.office_window
+      - switch.adaptive_lighting

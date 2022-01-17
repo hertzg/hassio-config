@@ -1,0 +1,29 @@
+default_config:
+
+wake_on_lan:
+
+http: !include http.yaml
+
+homekit: !include homekit.yaml
+
+notify: !include notifiers.yaml
+
+spotify: !include spotify.yaml
+
+ffmpeg: !include ffmpeg.yaml
+
+tts: !include ttses.yaml
+
+switch: !include switches.yaml
+
+sensor: !include sensors.yaml
+
+utility_meter: !include utility_meters.yaml
+
+group: !include groups.yaml
+
+automation: !include automations.yaml
+
+script: !include scripts.yaml
+
+scene: !include scenes.yaml
