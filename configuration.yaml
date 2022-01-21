@@ -2,6 +2,8 @@ default_config:
 
 wake_on_lan:
 
+homeassistant: !include homeassistant.yaml
+
 http: !include http.yaml
 
 homekit: !include homekit.yaml
